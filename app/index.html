@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI (PS5) · 55 Trophies, Offline Tracker</title>
+<meta name="description" content="Unofficial offline guide and tracker for all 55 Grand Theft Auto VI trophies on PS5: checklist, roadmap to platinum, missable warnings and spoiler-safe mode. Works with no network.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Unofficial fan guide · PlayStation 5 · Works offline</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="sub">Every one of the <strong>55 Grand Theft Auto VI trophies</strong> — what it asks, where to do it, how, and when it can be missed. Tick them off as you play; your progress stays in this browser.</p>
+    <div class="progress-wrap" aria-label="Overall progress">
+      <div class="progress-numbers"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="bar"><div id="progressBar" class="bar-fill" style="width:0%"></div></div>
+      <div id="gradeChips" class="chips"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="roadmap" class="card">
+    <h2>Roadmap to the Platinum</h2>
+    <p class="muted">“Vice Got a Price!” pops when the other 54 are done. PowerPyx rates the set <strong>4/10 difficulty, about 200 hours</strong>, in a single playthrough; Push Square estimates up to 300+ hours. All 55 are offline — no online trophies. <strong>Leave cheats off:</strong> cheats disable trophies and saving (GTABase / TechWiser, via eGamers).</p>
+    <ol class="phases">
+      <li data-phase="story"><strong>Phase 1 — Play the story.</strong> Just enjoy it. The 12 story trophies and the final-mission Gold pop on their own, and free roam continues after the story (Push Square). <em>Do one thing early:</em> meditate at the first meditation spot in Chapter 1 — see the missable warning below. <span class="phase-count"></span></li>
+      <li data-phase="stranger"><strong>Phase 2 — Strangers &amp; side characters.</strong> Finish the stranger mission strands (8 needed for the Silver; 14 exist, so skip the ones you dislike) and the final mission of each named character — Andy, Kenton, Billy, Randy, Tyrone. <span class="phase-count"></span></li>
+      <li data-phase="activity"><strong>Phase 3 — Activities.</strong> Shooting ranges (gold in all 42), drone races (win at all 14 spots), races, fishing, hunting, arcade, golf, pool, basketball — and 250 stunts. <span class="phase-count"></span></li>
+      <li data-phase="collectible"><strong>Phase 4 — Collecting &amp; exploring.</strong> Cards (3 of 18 sets), 100 WAiNK tags, 100 vehicles, all of Leonida. <span class="phase-count"></span></li>
+      <li data-phase="crime"><strong>Phase 5 — Crime &amp; money.</strong> Robberies, vaults, armored trucks, laundering $250,000 in Marked Bills, buying all 8 garages. <span class="phase-count"></span></li>
+      <li data-phase="completion"><strong>Phase 6 — Cleanup &amp; 100%.</strong> The in-game completion checklist opens after the story (Push Square). Finish the remaining challenges (50 for the Bronze, 70 toward 100%) and mop up anything left. <span class="phase-count"></span></li>
+    </ol>
+    <p class="warn" id="missableBanner">⚠ <strong>Only one possibly missable trophy:</strong> <a href="#trophy-28">Positive Mental Attitude</a> — meditate at every spot (18). PowerPyx and GTABase flag it because the first meditation spot is only usable early in the story, in Chapter 1. Meditate there as soon as it appears and keep a manual save from before the end of Chapter 1.</p>
+  </section>
+
+  <section class="controls card" aria-label="Filters">
+    <div class="row">
+      <label class="grow">Search <input id="search" type="search" placeholder="Trophy, mission or keyword…" autocomplete="off"></label>
+      <label>Grade
+        <select id="grade">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label>Kind
+        <select id="category">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="stranger">Strangers</option>
+          <option value="activity">Activities</option>
+          <option value="collectible">Collecting &amp; exploring</option>
+          <option value="crime">Crime</option>
+          <option value="money">Money &amp; property</option>
+          <option value="misc">Other</option>
+          <option value="completion">Completion</option>
+        </select>
+      </label>
+      <label>Status
+        <select id="status">
+          <option value="all">All</option>
+          <option value="missing">Not earned yet</option>
+          <option value="earned">Earned</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <label class="check"><input id="spoiler" type="checkbox" checked> Hide story trophies until earned (spoiler-safe)</label>
+      <label class="check"><input id="missableOnly" type="checkbox"> Missable only</label>
+      <label class="check"><input id="unconfirmedOnly" type="checkbox"> Unconfirmed methods only</label>
+      <span class="spacer"></span>
+      <button id="export" type="button">Export progress</button>
+      <label class="import-btn">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+      <button id="reset" type="button" class="danger">Reset</button>
+    </div>
+    <p id="resultCount" class="muted"></p>
+  </section>
+
+  <section id="list" aria-live="polite"></section>
+  <p id="empty" class="muted hidden">No trophies match these filters. <button id="clearFilters" type="button">Clear filters</button></p>
+</main>
+
+<footer>
+  <h2>Sources &amp; notes</h2>
+  <p>Names, descriptions and grades are the PS5 trophy list as published 18 November 2026, cross-checked against the lists at Push Square, PowerPyx (via KeenGamer / Sixshore), PSNProfiles and GTABase. The guides are written in our own words and cite their sources per trophy; they draw on other published guides but never copy their text. Methods labelled <strong>UNCONFIRMED</strong> are not yet confirmed in any published guide — check the sources for updates before grinding those.</p>
+  <ul id="sourceList"></ul>
+  <p class="muted">Unofficial fan-made guide. Not affiliated with, endorsed by or connected to Rockstar Games or Take-Two Interactive. No Rockstar artwork or logos are used. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Your checklist is stored only in this browser (localStorage); nothing is sent anywhere. This page works fully offline — open <code>app/index.html</code> in a desktop browser.</p>
+</footer>
+
+<script src="data/trophies.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
