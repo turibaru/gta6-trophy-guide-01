@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Platinum — GTA 6 Trophy Guide &amp; Tracker</title>
+<meta name="description" content="Offline guide and tracker for all 55 GTA 6 trophies on PlayStation 5: checklist, roadmap to the platinum, missable flags and a cited guide for every trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide</p>
+    <h1>Leonida Platinum</h1>
+    <p class="sub">The complete trophy guide &amp; tracker — all 55 trophies, a roadmap to the platinum, and a cited guide for every one. Works fully offline; your progress never leaves this browser.</p>
+    <div class="progress" id="progressBox" aria-live="polite">
+      <div class="progress-line"><strong id="earnedCount">0 / 55</strong><span id="earnedPct">0%</span></div>
+      <div class="bar"><div class="fill" id="progressFill" style="width:0%"></div></div>
+      <p class="grade-counts" id="gradeCounts"></p>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs wrap" aria-label="Sections">
+  <button type="button" data-view="checklist" class="tab active" id="tab-checklist">Checklist</button>
+  <button type="button" data-view="roadmap" class="tab" id="tab-roadmap">Roadmap</button>
+  <button type="button" data-view="missable" class="tab" id="tab-missable">Missable <span class="pill">1</span></button>
+  <button type="button" data-view="sources" class="tab" id="tab-sources">Sources</button>
+</nav>
+
+<main class="wrap">
+  <aside class="alert" id="missableBanner">
+    <strong>&#9888; Missable warning — read this first.</strong>
+    <span><strong>Positive Mental Attitude</strong> (#28): meditate at the first spot during <strong>Chapter 1 only</strong>. If the story moves past Chapter 1 before you meditate there, the trophy is locked for that playthrough. All other 54 trophies can be earned after the story.</span>
+  </aside>
+
+  <section id="view-checklist" class="view">
+    <div class="toolbar">
+      <label class="field">Search
+        <input type="search" id="searchBox" placeholder="Name or description…" autocomplete="off">
+      </label>
+      <label class="field">Grade
+        <select id="gradeFilter">
+          <option value="">All grades</option>
+          <option value="platinum">Platinum (1)</option>
+          <option value="gold">Gold (2)</option>
+          <option value="silver">Silver (6)</option>
+          <option value="bronze">Bronze (46)</option>
+        </select>
+      </label>
+      <label class="field">Kind
+        <select id="kindFilter">
+          <option value="">All kinds</option>
+          <option value="story">Story</option>
+          <option value="stranger">Stranger</option>
+          <option value="collectible">Collectible</option>
+          <option value="activity">Activity</option>
+          <option value="combat">Combat</option>
+          <option value="crime">Crime</option>
+          <option value="exploration">Exploration</option>
+          <option value="economy">Economy</option>
+        </select>
+      </label>
+      <label class="field">Status
+        <select id="statusFilter">
+          <option value="">Earned &amp; unearned</option>
+          <option value="earned">Earned only</option>
+          <option value="unearned">Unearned only</option>
+        </select>
+      </label>
+      <label class="check"><input type="checkbox" id="missableOnly"> Missable only</label>
+      <label class="check"><input type="checkbox" id="unconfirmedOnly"> Method unconfirmed only</label>
+      <label class="check spoiler"><input type="checkbox" id="spoilerToggle" checked> Spoiler mode: hide story &amp; hidden trophies until earned</label>
+    </div>
+
+    <div class="actions">
+      <button type="button" id="exportBtn">Export progress (.json)</button>
+      <button type="button" id="importBtn">Import progress</button>
+      <input type="file" id="importFile" accept=".json,application/json" hidden>
+      <button type="button" id="resetBtn" class="danger">Reset progress</button>
+      <span class="hint" id="resultCount"></span>
+    </div>
+    <p class="status" id="importStatus" role="status"></p>
+
+    <div id="cards" class="cards"></div>
+    <p class="empty" id="emptyMsg" hidden>No trophies match these filters. Clear the search or filters to see the full list.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p>Six phases, in the order to play them. Counts update live from your checklist. Built from the official trophy descriptions: story chapters first, then strangers, collectibles, activities, and the crime &amp; economy cleanup — the platinum pops when the 54th trophy does.</p>
+    <div id="roadmap" class="roadmap"></div>
+  </section>
+
+  <section id="view-missable" class="view" hidden>
+    <h2>Missable trophies</h2>
+    <p>Only <strong>one</strong> of the 55 trophies can be missed. Everything else can be earned after the story ends, in free roam or in the cleanup phase.</p>
+    <div id="missableList" class="cards"></div>
+    <h3>How the other trophies stay safe</h3>
+    <ul class="notes">
+      <li>Story trophies (Chapters 1–4, the named missions, the finale) unlock by playing the story; none of them is missable — missions can be replayed.</li>
+      <li>Stranger strands stay open after the story, so Andy, Kenton, Billy, Randy and Tyrone can be finished in the cleanup phase.</li>
+      <li>Collectibles (cards, WAiNK spots), stunts, challenges, races and the shooting range are all still available in free roam.</li>
+      <li>Keep a save from before major story choices: two hidden trophies (Actions Speak Louder, Bad Luck, I Guess) read like choice trophies, but their exact triggers are unconfirmed — see their cards.</li>
+    </ul>
+  </section>
+
+  <section id="view-sources" class="view" hidden>
+    <h2>Sources &amp; method</h2>
+    <p>Every trophy card names its source. The official names, descriptions and grades come from PlayStation's list as published by Exophase and PSNProfiles (the two agree on all 55). Counts PlayStation tracks — 42 Shooting Range challenges, 14 drone race locations, 18 meditation spots, 9 activity types, 8 garages, 397 stunts, 80 challenges, 14 stranger strands, 18 card sets — come from PSNProfiles. Method steps cite the PowerPyx and PlayStationTrophies.org GTA 6 guides. All guide text is written in our own words for this entry; sources are cited, never copied.</p>
+    <ul class="notes">
+      <li><a href="https://www.exophase.com/game/grand-theft-auto-vi-psn/trophies/">Exophase — Grand Theft Auto VI trophies</a> (official names, descriptions, grades)</li>
+      <li><a href="https://psnprofiles.com/trophies/43531-grand-theft-auto-vi">PSNProfiles — Grand Theft Auto VI trophies</a> (grades and PSN progress counts)</li>
+      <li><a href="https://www.powerpyx.com/">PowerPyx — GTA 6 Trophy Guide</a> (methods for the verified trophies)</li>
+      <li><a href="https://www.playstationtrophies.org/">PlayStationTrophies.org — GTA 6 Trophy Guide</a> (methods for the verified trophies)</li>
+    </ul>
+    <h3>What “Method unconfirmed” means</h3>
+    <p>9 trophies carry the label <strong>Method unconfirmed</strong>: their guides say only what the official description itself suggests, because no checked method has been published yet. We would rather mark a gap honestly than invent a walkthrough. Those 9 are: Challenging Tank (#38), In The Beginning… (#44), Capital Offense (#45), Let’s Go Bowling (#46), Personal Best (#47), Actions Speak Louder (#48), Bad Luck, I Guess (#49), The Truth Is Out There (#50) and Ten Pin (#51).</p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p><strong>Leonida Platinum</strong> — an unofficial fan guide. Not affiliated with, endorsed by or connected to Rockstar Games, Take-Two Interactive or PlayStation. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. No Rockstar logo, artwork or game screenshot is used here; the look is our own.</p>
+  <p>Data: the official 55-trophy PS5 list (Exophase / PSNProfiles, 2026-11-18). Progress is saved only in this browser (localStorage) and can be exported as JSON. This page loads no network resource and works with the network off.</p>
+</footer>
+
+<script src="data/trophies.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
